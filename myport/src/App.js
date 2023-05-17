@@ -1,22 +1,26 @@
-import MySites from "./MyProjects/MySites"
+import { Routes, Route} from "react-router-dom"
+import { HomePage } from "./MyProjects/HomePage.js";
+import { AboutMe } from "./MyProjects/AboutMe.js";
+import { Gallery } from "./MyProjects/Gallery.js";
+import { Book } from "./MyProjects/Book.js";
 
 const style = {
-  bg:" w-full h-screen bg-gradient-to-r from-slate-500 via-yellow-900 to-gray-800 background-animate",
-  header:"text-center p-4 text-white",
-  div:"flex flex-col items-center text-white",
-  button:"p-4 rounded-sm shadow-xl"
+  bg:`h-screen w-screen p-4 bg-gradient-to-r from-[#71717a] to-[#d1d5db]`,
+
 }
 
 function App() {
   return (
+    <>
     <div className={style.bg}>
-    <header className={style.header}> Nath's Portfolio </header>
-    <div className={style.div}>
-    <button className={style.button}>Projects</button>
+     <HomePage /> 
+     <Routes>
+        <Route path="/about" element={<AboutMe />} />
+        <Route path="/gallery" element={<Gallery />} />
+        <Route path="/book" element={<Book />} />
+     </Routes> 
     </div>
-    
-    
-    </div>
+    </>
   );
 }
 
